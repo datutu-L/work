@@ -63,6 +63,9 @@ GitHub和Git的初步使用
 * ![图片的alt信息，可空)](https://raw.githubusercontent.com/lnkDrop/work/master/img/test.png)
 * 项目合并 ` git pull --rebase origin main `
 
+   *避坑 ：在上面创建远程仓库的时候，如果你勾选了 Initialize this repository with a README（就是创建仓库的时候自动给你创建一个README文件），那么到了第8 将本地仓库内容推送到远程仓库的时候就会报一个 failed to push some refs to https://github.com/…git 的错。
+这是由于你新创建的那个仓库里面的README文件不在本地仓库目录中，这时我们可以通过以下命令先将内容合并一下：` git pull --rebase origin main `*
+
 ---
 
 
