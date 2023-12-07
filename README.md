@@ -59,11 +59,14 @@ GitHub和Git的初步使用
 * 6.在创建好的项目库中提示添加你的项目文件，我们的项目文件在本地，所以选择第一种，复制它的SSH
 * ![图片的alt信息，可空)](https://raw.githubusercontent.com/lnkDrop/work/master/img/copy.png)
 * 7.关联github仓库：回到你的本地项目文件夹，绑定远程仓库，只需要在gitbash中输入`$ git remote add origin "粘贴第6步复制的SSH地址"(右键paste)`
-* 上传本地代码：没有报错就接着输入 `$ git push -u origin master` 回车之后等待一段时间，可以看到文件上传成功，回到GitHub仓库下刷新看看，添加的文件有没有导入进来。如果能显示刚刚添加README文件就证明已经上传成功啦！
+* 8.上传本地代码：执行`$ git branch -M main`先把本地的 mater 分支名改为 main 分支，因为github的仓库主分支叫 main ，而本地仓库主分支叫 master。
+* 9.接着输入 `$ git push -u origin main` 回车之后等待一段时间，可以看到文件上传成功，回到GitHub仓库下刷新看看，添加的文件有没有导入进来。如果能显示刚刚添加README文件就证明已经上传成功啦！
+
+  
 * ![图片的alt信息，可空)](https://raw.githubusercontent.com/lnkDrop/work/master/img/test.png)
 * 项目合并 ` git pull --rebase origin main `
 
-   *避坑 ：在上面创建远程仓库的时候，如果你勾选了 Initialize this repository with a README（就是创建仓库的时候自动给你创建一个README文件），那么到了第8 将本地仓库内容推送到远程仓库的时候就会报一个 failed to push some refs to https://github.com/…git 的错。
+   *避坑 ：在上面创建远程仓库的时候，如果你勾选了 Initialize this repository with a README（就是创建仓库的时候自动给你创建一个README文件），那么到了第 9 将本地仓库内容推送到远程仓库的时候就会报一个 failed to push some refs to https://github.com/…git 的错。
 这是由于你新创建的那个仓库里面的README文件不在本地仓库目录中，这时我们可以通过以下命令先将内容合并一下：` git pull --rebase origin main `*
 
 ---
