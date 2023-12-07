@@ -61,6 +61,8 @@ GitHub和Git的初步使用
 * 7.关联github仓库：回到你的本地项目文件夹，绑定远程仓库，只需要在gitbash中输入`$ git remote add origin "粘贴第6步复制的SSH地址"(右键paste)`
 * 8.上传本地代码：执行`$ git branch -M main`先把本地的 mater 分支名改为 main 分支，因为github的仓库主分支叫 main ，而本地仓库主分支叫 master。
 * 9.接着输入 `$ git push -u origin main` 回车之后等待一段时间，可以看到文件上传成功，回到GitHub仓库下刷新看看，添加的文件有没有导入进来。如果能显示刚刚添加README文件就证明已经上传成功啦！
+ 
+	*带上 -u 参数其实就相当于记录了push到远端分支的默认值，这样当下次我们还想要继续push的这个远端分支的时候推送命令就可以简写成 git push 即可，也就是添加-u参数后可以使后续提交命令变得简洁。如果不需要这样做的话可以直接使用 `$ git push origin main`。*
 
   
 * ![图片的alt信息，可空)](https://raw.githubusercontent.com/lnkDrop/work/master/img/test.png)
@@ -68,6 +70,17 @@ GitHub和Git的初步使用
 
    *避坑 ：在上面创建远程仓库的时候，如果你勾选了 Initialize this repository with a README（就是创建仓库的时候自动给你创建一个README文件），那么到了第 9 将本地仓库内容推送到远程仓库的时候就会报一个 failed to push some refs to https://github.com/…git 的错。
 这是由于你新创建的那个仓库里面的README文件不在本地仓库目录中，这时我们可以通过以下命令先将内容合并一下：` git pull --rebase origin main `*
+
+git push 的其他操作命令:
+
+ （1）以下命令将本地的 master 分支推送到 origin 主机的 main 分支。
+`git push origin main`
+
+ （2）如果本地版本与远程版本有差异，但又要强制推送可以使用 --force 参数：
+`git push --force origin main`
+
+ （3）删除主机的分支可以使用 --delete 参数，以下命令表示删除 origin 主机的 main 分支：
+`git push origin --delete main`
 
 ---
 
@@ -104,7 +117,7 @@ GitHub和Git的初步使用
 * 4提交修改，输入
 	`$ git commit -m "备注信息"`
 * 5上传修改文件到github，输入
-	`$ git push -u origin main`
+	`$ git push origin main`
 
 
 ---
